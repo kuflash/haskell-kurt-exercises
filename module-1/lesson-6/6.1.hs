@@ -1,0 +1,1 @@
+myRepeat n = cycle n : []
