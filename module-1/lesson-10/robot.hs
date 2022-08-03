@@ -39,7 +39,9 @@ getWinner firstRobot secondRobot =
     firstRobotHP = getHP firstRobot
     secondRobotHP = getHP secondRobot
 
--- It's not work, because infinity type error. Maybe need to learn next chapter about type system
+-- It's not work, because infinity type error.
+-- See correct version with types in robots_with_types.hs
+
 -- threeRoundFight aRobot bRobot =
 --   ( \bRobot1 ->
 --       ( \aRobot1 ->
