@@ -1,0 +1,68 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: fa507a02e6cddfb46f8362f3847ded54d20c4f9cd45eef0f68eb3f46ab59160d
+
+name:           palindrome-checker
+version:        0.1.0.0
+description:    Example project from book
+homepage:       https://github.com/githubuser/palindrome-checker#readme
+bug-reports:    https://github.com/githubuser/palindrome-checker/issues
+author:         Igor Uvarov
+copyright:      2022 Igor Uvarov
+maintainer:     kuflash@ya.ru
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/palindrome-checker
+
+library
+  exposed-modules:
+      Lib
+    , Palindrome
+  other-modules:
+      Paths_palindrome_checker
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      base >=4.7 && <5
+    , text
+  default-language: Haskell2010
+  extensions: OverloadedStrings
+
+executable palindrome-checker-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_palindrome_checker
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , palindrome-checker
+    , text
+  default-language: Haskell2010
+  extensions: OverloadedStrings
+
+test-suite palindrome-checker-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_palindrome_checker
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , palindrome-checker
+  default-language: Haskell2010
