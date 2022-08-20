@@ -1,0 +1,67 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: e9c3edc5b8d9a374c6f58a5a8fc83f27e52efd8738fc038822a3649ed2f33cf2
+
+name:           palindrome-testing
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/palindrome-testing#readme>
+homepage:       https://github.com/githubuser/palindrome-testing#readme
+bug-reports:    https://github.com/githubuser/palindrome-testing/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2022 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/palindrome-testing
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_palindrome_testing
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      base >=4.7 && <5
+    , text
+  default-language: Haskell2010
+
+executable palindrome-testing-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_palindrome_testing
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , palindrome-testing
+  default-language: Haskell2010
+
+test-suite palindrome-testing-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_palindrome_testing
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , palindrome-testing
+    , quickcheck-instances
+    , text
+  default-language: Haskell2010
